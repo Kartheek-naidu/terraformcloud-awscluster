@@ -1,3 +1,5 @@
-output "iam_groups_created" {
-  value = [for group in module.iam_groups : group.group_name]
+output "iam_groups_map" {
+  value = {
+    for k, mod in module.iam_groups : k => mod.group_name
+  }
 }

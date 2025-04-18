@@ -7,4 +7,5 @@ module "iam_groups" {
   for_each   = toset(var.group_names)
   group_name = each.key
   role_name  = "role-for-${each.key}"
+  user_name  = "user-for-${each.key}"
 }
